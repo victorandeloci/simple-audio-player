@@ -1,0 +1,121 @@
+:root {
+  --hintColor: #0193b7;
+}
+
+.audio-player {
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	color: #fff;
+	padding: .5rem 0;
+	z-index: 899;
+	-webkit-transition-duration: .2s;
+	-o-transition-duration: .2s;
+	transition-duration: .2s
+}
+
+.audio-player .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center
+}
+
+.audio-player .container .title-player {
+	width: 100%;
+	padding: .2rem 1rem
+}
+
+.audio-player .container .title-player p {
+	margin: 0
+}
+
+.audio-player .btn{
+  margin: 0 .5rem;
+  cursor: pointer;
+}
+
+.audio-player .btn {
+	background-color: transparent;
+	margin-bottom: 0
+}
+
+.player-controls {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	width: 100%;
+	height: 1rem
+}
+
+#seek-obj-container {
+	width: 100%;
+	margin: 0 1rem;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center
+}
+
+.player-controls .divider {
+	margin: 0 1rem
+}
+
+#vol-obj-container {
+	margin: 0 0 0 1rem;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center
+}
+  .player-controls a {
+    color: #fff;
+  }
+
+progress {
+	width: 100%;
+	-webkit-appearance: none
+}
+
+progress[value] {
+	background-color: #bbb;
+	color: var(--hintColor);
+	height: .4rem;
+	min-width: 5rem;
+	border: none
+}
+
+progress[value]::-webkit-progress-bar {
+	background-color: #bbb
+}
+
+::-webkit-progress-value,
+progress::-webkit-progress-value {
+	background-color: var(--hintColor)
+}

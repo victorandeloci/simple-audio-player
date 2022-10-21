@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Audio Player</title>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="player_core.js" charset="utf-8" defer></script>
+    <script type="text/javascript">
+      function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+          // call on next available tick
+          setTimeout(fn, 1);
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
+      }
+
+      docReady(function() {
+        var player = document.getElementById('player');
+        player.load();
+
+        initPlayers(document.querySelectorAll('#player-container').length);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="audio-player" id="audio-player">
+      <div class="container">
+        <div id="less-btn" class="btn"><i class="fas fa-undo-alt"></i></div>
+        <div id="play-btn" class="btn play-btn"><i class="fas fa-play" id="play-btn-icon"></i></div>
+        <div id="plus-btn" class="btn"><i class="fas fa-redo-alt"></i></div>
+        <div class="audio-wrapper" id="player-container" href="javascript:;">
+          <audio id="player" ontimeupdate="initProgressBar()" oncanplay="initVolumeBar();" preload="none">
+            <source id="playerSource" src="mp3/Slipping_Away_-_Dyalla.mp3" type="audio/mp3">
+          </audio>
+        </div>
+        <div class="title-player">
+          <div class="player-controls scrubber">
+            <small id="start-time"></small>
+            <span id="seek-obj-container">
+              <progress id="seek-obj" value="0" max="1"></progress>
+            </span>
+            <small id="end-time"></small>
+            <span class="divider">|</span>
+            <small class="btn volume-btn"><i id="volume-btn" class="fas fa-volume-up"></i></small>
+            <span id="vol-obj-container">
+              <progress id="vol-obj" value="0" max="1"></progress>
+            </span>
+            <span class="divider">|</span>
+            <a title="Donwload" id="playerPodDownload" data-follow="true" class="btn" target="_blank" rel="noreferrer noopener" class="podcast-btn" href="mp3/Slipping_Away_-_Dyalla.mp3" download>
+              <div class="download-cast"><i class="fas fa-download"></i></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
